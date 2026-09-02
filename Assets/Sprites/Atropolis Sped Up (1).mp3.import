@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dphujbcejm748"
+path="res://.godot/imported/Atropolis Sped Up (1).mp3-3aceb962587e7b39bc3f45d46df88d8f.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sprites/Atropolis Sped Up (1).mp3"
+dest_files=["res://.godot/imported/Atropolis Sped Up (1).mp3-3aceb962587e7b39bc3f45d46df88d8f.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://bihcn64pjvwde"]
+
+[ext_resource type="Texture2D" uid="uid://bn6nl4btr0fma" path="res://Assets/Sprites/bee.png" id="1_30qmu"]
+[ext_resource type="PackedScene" uid="uid://dxksj0lbro58u" path="res://Assets/Scenes/killzone.tscn" id="2_hdr51"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olwmy"]
+atlas = ExtResource("1_30qmu")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cr7vm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_olwmy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bctgg"]
+size = Vector2(33, 30)
+
+[node name="Bees" type="AnimatableBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_cr7vm")
+
+[node name="Killzone" parent="." instance=ExtResource("2_hdr51")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_bctgg")

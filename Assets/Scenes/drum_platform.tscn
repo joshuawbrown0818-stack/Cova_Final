@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://cn3bh2pbejvw5"]
+
+[ext_resource type="Texture2D" uid="uid://ck116hj6iyvqm" path="res://Assets/Sprites/drum (1).png" id="1_xhjav"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5k1gg"]
+atlas = ExtResource("1_xhjav")
+region = Rect2(2, 0, 30, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ibq2e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5k1gg")
+}],
+"loop": true,
+"name": &"stepped_on",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xhjav"]
+size = Vector2(25.4032, 14.8354)
+
+[node name="drum_platform" type="AnimatableBody2D"]
+scale = Vector2(1.85777, 1.93061)
+collision_mask = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ibq2e")
+animation = &"stepped_on"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.604839, -3.82124)
+shape = SubResource("RectangleShape2D_xhjav")

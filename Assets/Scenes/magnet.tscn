@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://3ymixq840tg"]
+
+[ext_resource type="Texture2D" uid="uid://duwws58q61txm" path="res://Assets/Sprites/magnet.png" id="1_wnxg2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tet7s"]
+atlas = ExtResource("1_wnxg2")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1m24y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tet7s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wnxg2"]
+size = Vector2(31.9718, 6)
+
+[node name="magnet" type="AnimatableBody2D"]
+scale = Vector2(2.87753, 1.4421)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(7.5, 0)
+scale = Vector2(1.397, 1.375)
+sprite_frames = SubResource("SpriteFrames_1m24y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5.2128, -2)
+shape = SubResource("RectangleShape2D_wnxg2")

@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://cxdwgkcnwltjd"]
+
+[ext_resource type="Texture2D" uid="uid://cbraynv4rhmn3" path="res://Assets/Sprites/dark monster2.png" id="1_7a8g4"]
+[ext_resource type="PackedScene" uid="uid://dxksj0lbro58u" path="res://Assets/Scenes/killzone.tscn" id="2_coxkm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bccwr"]
+atlas = ExtResource("1_7a8g4")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_icvtv"]
+atlas = ExtResource("1_7a8g4")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4dumh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bccwr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_icvtv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gtjqv"]
+size = Vector2(8, 9)
+
+[node name="darkenemy2" type="AnimatableBody2D"]
+scale = Vector2(2, 1.84)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_4dumh")
+autoplay = "default"
+frame_progress = 0.487456
+
+[node name="Killzone" parent="." instance=ExtResource("2_coxkm")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(-1, -7.5)
+shape = SubResource("RectangleShape2D_gtjqv")

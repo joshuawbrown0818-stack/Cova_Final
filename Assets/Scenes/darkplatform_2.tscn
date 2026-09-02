@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfpk4n0llg8bi"]
+
+[ext_resource type="Texture2D" uid="uid://7sux2xjoolsf" path="res://Assets/Sprites/dark platform 2.png" id="1_7pdsy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fhknw"]
+size = Vector2(11, 2)
+
+[node name="darkplatform2" type="AnimatableBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_7pdsy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -4)
+shape = SubResource("RectangleShape2D_fhknw")

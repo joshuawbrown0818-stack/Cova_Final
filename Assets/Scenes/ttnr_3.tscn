@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cly2n7o82sr4o"]
+
+[ext_resource type="Script" uid="uid://c27tf4ls6neex" path="res://Assets/Scripts/ttnr3.gd" id="1_pm6nl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rgde0"]
+size = Vector2(33, 51)
+
+[node name="TTNR3" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_pm6nl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6.5, 15.5)
+shape = SubResource("RectangleShape2D_rgde0")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

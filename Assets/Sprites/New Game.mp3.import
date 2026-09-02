@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://4xivs8v0j7cg"
+path="res://.godot/imported/New Game.mp3-632500be6f04eb8cc527982aead002ba.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sprites/New Game.mp3"
+dest_files=["res://.godot/imported/New Game.mp3-632500be6f04eb8cc527982aead002ba.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

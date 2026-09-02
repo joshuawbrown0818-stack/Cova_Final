@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhcam2ce0f6q3"]
+
+[ext_resource type="Script" uid="uid://0tdb3bu6l8ex" path="res://Assets/Scripts/to_next_room_2.gd" id="1_s2nrs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l3o7r"]
+size = Vector2(34, 54)
+
+[node name="To_next_room2" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_s2nrs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(7, 9)
+shape = SubResource("RectangleShape2D_l3o7r")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

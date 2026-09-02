@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://cte2gdjc4prrk"]
+
+[ext_resource type="Texture2D" uid="uid://boanodd8i612" path="res://Assets/Sprites/spider.png" id="1_tg8os"]
+[ext_resource type="PackedScene" uid="uid://dxksj0lbro58u" path="res://Assets/Scenes/killzone.tscn" id="2_2jq41"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2jq41"]
+atlas = ExtResource("1_tg8os")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4xp2"]
+atlas = ExtResource("1_tg8os")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dseno"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2jq41")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4xp2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v4xp2"]
+
+[node name="Spider" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_dseno")
+autoplay = "default"
+frame_progress = 0.408303
+
+[node name="Killzone" parent="." instance=ExtResource("2_2jq41")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(-1, 0)
+scale = Vector2(0.739096, 0.599999)
+shape = SubResource("CircleShape2D_v4xp2")

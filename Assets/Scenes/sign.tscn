@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://6ri2jcvre8xk"]
+
+[ext_resource type="Texture2D" uid="uid://5adfdhm45jph" path="res://Assets/Sprites/sign.png" id="1_w42c6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ixoxq"]
+atlas = ExtResource("1_w42c6")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2lpn1"]
+atlas = ExtResource("1_w42c6")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ed51k"]
+atlas = ExtResource("1_w42c6")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5kgk"]
+atlas = ExtResource("1_w42c6")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wncp2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ixoxq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2lpn1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ed51k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r5kgk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="sign" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_wncp2")
+autoplay = "default"
+frame_progress = 0.872271

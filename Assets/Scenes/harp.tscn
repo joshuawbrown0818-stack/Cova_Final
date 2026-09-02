@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://c3mxcxiacs8xr"]
+
+[ext_resource type="Texture2D" uid="uid://bdvq4wn55pvy8" path="res://Assets/Sprites/Mr.Harp (1).png" id="1_s4aj5"]
+[ext_resource type="PackedScene" uid="uid://dxksj0lbro58u" path="res://Assets/Scenes/killzone.tscn" id="2_rqdra"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1pb1"]
+atlas = ExtResource("1_s4aj5")
+region = Rect2(2, 0, 31, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iqp8b"]
+atlas = ExtResource("1_s4aj5")
+region = Rect2(33, 0, 31, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0aeb"]
+atlas = ExtResource("1_s4aj5")
+region = Rect2(2, 32, 31, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g44r7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a1pb1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iqp8b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0aeb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5e5fi"]
+radius = 8.0
+
+[node name="Harp" type="Node2D"]
+scale = Vector2(2.12792, 2.00247)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_g44r7")
+autoplay = "default"
+frame_progress = 0.372129
+
+[node name="Killzone" parent="." instance=ExtResource("2_rqdra")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(-3, -4)
+shape = SubResource("CircleShape2D_5e5fi")

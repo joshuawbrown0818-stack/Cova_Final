@@ -1,0 +1,77 @@
+[gd_scene load_steps=12 format=3 uid="uid://d24mr68rsg8ig"]
+
+[ext_resource type="Texture2D" uid="uid://bn0y07xwk38jk" path="res://Assets/Sprites/electricity.png" id="1_5psis"]
+[ext_resource type="PackedScene" uid="uid://dxksj0lbro58u" path="res://Assets/Scenes/killzone.tscn" id="2_13vhe"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xfyrq"]
+atlas = ExtResource("1_5psis")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vyd0f"]
+atlas = ExtResource("1_5psis")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eia14"]
+atlas = ExtResource("1_5psis")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fokbx"]
+atlas = ExtResource("1_5psis")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3cmat"]
+atlas = ExtResource("1_5psis")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2s0lf"]
+atlas = ExtResource("1_5psis")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bifm4"]
+atlas = ExtResource("1_5psis")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7t18l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xfyrq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vyd0f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eia14")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fokbx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3cmat")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2s0lf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bifm4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i7ll0"]
+size = Vector2(22, 16)
+
+[node name="Electricity" type="Node2D"]
+scale = Vector2(2.48, 2.36)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_7t18l")
+autoplay = "default"
+frame_progress = 0.740665
+
+[node name="Killzone" parent="." instance=ExtResource("2_13vhe")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+shape = SubResource("RectangleShape2D_i7ll0")

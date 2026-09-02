@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://d4h7cg6ivekkd"]
+
+[ext_resource type="Script" uid="uid://dsnb65nwu50ab" path="res://Assets/Scripts/cutscene.gd" id="1_4ubmv"]
+[ext_resource type="Texture2D" uid="uid://bvn1p28vvfr70" path="res://Assets/Sprites/PixelFantasy_Caves_1.0/background1.png" id="1_lgdvr"]
+[ext_resource type="Texture2D" uid="uid://d0ow0oevpgu7f" path="res://Assets/Sprites/Charlotte photo.png" id="2_ks5jh"]
+[ext_resource type="FontFile" uid="uid://voci6ah2ah73" path="res://Assets/Sprites/PixelOperator8.ttf" id="3_ks5jh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4ubmv"]
+font = ExtResource("3_ks5jh")
+font_size = 21
+font_color = Color(0.716296, 0.716296, 0.716296, 1)
+
+[node name="cutscene" type="Node2D"]
+script = ExtResource("1_4ubmv")
+
+[node name="Background1" type="Sprite2D" parent="."]
+position = Vector2(42, 7)
+texture = ExtResource("1_lgdvr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-179, -7)
+scale = Vector2(9.36816, 9.83462)
+texture = ExtResource("2_ks5jh")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -3.0
+offset_top = -118.0
+offset_right = 337.0
+offset_bottom = 4.0
+text = "YOU NEVER RETURNED
+FROM THAT CAVE 
+CHARLOTTE.
+
+WHERE DID YOU GO?"
+label_settings = SubResource("LabelSettings_4ubmv")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.5, 1.5)
+
+[node name="Continue" type="Button" parent="."]
+offset_left = 4.99999
+offset_top = 33.0
+offset_right = 96.0
+offset_bottom = 64.0
+scale = Vector2(2.76452, 2.69026)
+text = "CONTINUE"
+
+[connection signal="pressed" from="Continue" to="." method="_on_continue_pressed"]

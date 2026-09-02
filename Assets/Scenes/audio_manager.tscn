@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhhhoqjcoggri"]
+
+[ext_resource type="Script" uid="uid://bwmg7aggspht2" path="res://Assets/Scripts/audio_manager.gd" id="1_koqun"]
+[ext_resource type="AudioStream" uid="uid://4xivs8v0j7cg" path="res://Assets/Sprites/New Game.mp3" id="1_l1abx"]
+[ext_resource type="AudioStream" uid="uid://dphujbcejm748" path="res://Assets/Sprites/Atropolis Sped Up (1).mp3" id="2_koqun"]
+[ext_resource type="AudioStream" uid="uid://86n7jti82ocd" path="res://Assets/Sprites/Untitled song.mp3" id="3_1ao56"]
+
+[node name="AudioManager" type="Node"]
+script = ExtResource("1_koqun")
+
+[node name="MainPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_l1abx")
+
+[node name="TitlePlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_1ao56")
+
+[node name="ChasePlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_koqun")

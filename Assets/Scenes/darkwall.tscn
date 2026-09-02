@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bk25rh2qprjge"]
+
+[ext_resource type="Texture2D" uid="uid://qtvqhjl85dyd" path="res://Assets/Sprites/dark wall.png" id="1_yfl32"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cfisw"]
+size = Vector2(13, 31)
+
+[node name="darkwall" type="AnimatableBody2D"]
+
+[node name="DarkWall" type="Sprite2D" parent="."]
+position = Vector2(-2, 3)
+texture = ExtResource("1_yfl32")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.5, 3.5)
+shape = SubResource("RectangleShape2D_cfisw")

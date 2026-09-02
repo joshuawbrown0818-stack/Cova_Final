@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://du3byksedvfob"]
+
+[ext_resource type="Script" uid="uid://dy6ifibuwdb4s" path="res://Assets/Scripts/toteend.gd" id="1_wm5q8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dxno5"]
+size = Vector2(46, 74)
+
+[node name="Totheeend" type="Area2D"]
+script = ExtResource("1_wm5q8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(13, 27)
+shape = SubResource("RectangleShape2D_dxno5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

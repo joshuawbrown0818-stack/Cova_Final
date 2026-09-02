@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://dp6qogsbxjxsr"]
+
+[ext_resource type="Texture2D" uid="uid://chd7a1617o4fh" path="res://Assets/Sprites/dark platform.png" id="1_ucn30"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uab7a"]
+atlas = ExtResource("1_ucn30")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nvn2a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uab7a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7anv6"]
+size = Vector2(20, 2)
+
+[node name="darkplatform1" type="AnimatableBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_nvn2a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_7anv6")
